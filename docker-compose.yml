@@ -12,7 +12,7 @@ services:
       - 8762:8761
     networks:
       - mysqlnetwork
-      - jenkins
+
 
 
   mysql-service:
@@ -26,7 +26,7 @@ services:
       - MYSQL_DATABASE=twitter_microservices
     networks:
       - mysqlnetwork
-      - jenkins
+
 
   cloud-gateway:
     container_name: cloud-gateway
@@ -34,7 +34,7 @@ services:
     build: ./backend/cloud-gateway
     networks:
       - mysqlnetwork
-      - jenkins
+
     depends_on:
       - service-registry
       - mysql-service
@@ -47,7 +47,6 @@ services:
     build: ./backend/auth-service
     networks:
       - mysqlnetwork
-      - jenkins
     depends_on:
       - service-registry
       - mysql-service
@@ -66,7 +65,6 @@ services:
     build: ./backend/tweet-service
     networks:
       - mysqlnetwork
-      - jenkins
     depends_on:
       - service-registry
       - mysql-service
@@ -85,7 +83,6 @@ services:
     build: ./backend/reply-service
     networks:
       - mysqlnetwork
-      - jenkins
     depends_on:
       - service-registry
       - mysql-service
@@ -97,4 +94,13 @@ services:
       - MYSQL_PASSWORD=root
     ports:
       - 9003:9003
+  
+  angular-service:
+    container_name: angular-frontend
+    image: dsbrowne/twitter-frontend
+    build: ./frontend/twitter-app
+    # networks:
+    #   - jenkins
+    ports:
+      - 4201:4200
 
