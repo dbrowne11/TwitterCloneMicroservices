@@ -3,7 +3,7 @@ FROM maven:3.8.5-openjdk-17
 COPY . /cloud-gateway/
 WORKDIR /cloud-gateway/
 
-RUN mvn clean install -DskipTests
+RUN mvn install -DskipTests
 EXPOSE 9090
 
 

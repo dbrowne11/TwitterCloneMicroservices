@@ -3,7 +3,7 @@ FROM maven:3.8.5-openjdk-17
 COPY . /config-server/
 WORKDIR /config-server/
 
-RUN mvn clean install -DskipTests
+RUN mvn install -DskipTests
 EXPOSE 9296
 
 # ARG JAR_FILE=target/*.jar
