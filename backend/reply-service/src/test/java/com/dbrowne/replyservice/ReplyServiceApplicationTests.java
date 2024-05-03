@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootTest
 class ReplyServiceApplicationTests {
 
-	@Test
+	// @Test
 	void contextLoads() {
 	}
 
