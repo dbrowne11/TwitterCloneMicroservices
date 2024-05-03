@@ -10,7 +10,7 @@ import { IUser } from '../models/user.model';
 })
 export class DataService {
 
-  private BASE_URL = 'http://3.146.152.63';
+  private BASE_URL = 'http://3.146.152.63:9090';
   private TWEET_PREFIX = "/api/v1.0/tweets";
   private AUTH_PREFIX = "/api/v1.0/auth";
   private REPLY_PREFIX = "/api/v1.0/replies";
